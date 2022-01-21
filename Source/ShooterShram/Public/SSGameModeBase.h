@@ -7,11 +7,13 @@
 #include "SSGameModeBase.generated.h"
 
 /**
- * 
+ *
  */
 UCLASS()
 class SHOOTERSHRAM_API ASSGameModeBase : public AGameModeBase
 {
-	GENERATED_BODY()
-	
+    GENERATED_BODY()
+
+public:
+    ASSGameModeBase();
 };

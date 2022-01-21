@@ -1,16 +1,14 @@
 // ShooterShram Game. All Rights Reserved.
 
 #include "SSGameModeBase.h"
+#include "Player/SSBaseCharacter.h"
+#include "Player/SSPlayerController.h"
 
-void ASSGameModeBase::BeginPlay()
+ASSGameModeBase::ASSGameModeBase()
 {
-    int32 Variable = 0;
-    if (Variable < 10)
-        if (Variable < 10)
-        {
-            for (int32 i = 0; i < 10; i++)
-            {
-                UE_LOG(LogTemp, Display, TEXT("index: %i"), i);
-            }
-        }
+    DefaultPawnClass = ASSBaseCharacter::StaticClass();
+    PlayerControllerClass = ASSPlayerController::StaticClass();
+
+
+
 }
