@@ -7,6 +7,7 @@
 #include "SSBaseCharacter.generated.h"
 
 class UCameraComponent;
+class USpringArmComponent;
 
 UCLASS()
 class SHOOTERSHRAM_API ASSBaseCharacter : public ACharacter
@@ -14,24 +15,23 @@ class SHOOTERSHRAM_API ASSBaseCharacter : public ACharacter
     GENERATED_BODY()
 
 public:
-    // Sets default values for this character's properties
     ASSBaseCharacter();
 
 protected:
+    UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Component");
+    USpringArmComponent* SpringArmComponent;
+
     UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Component");
     UCameraComponent* CameraComponent;
 
     virtual void BeginPlay() override;
 
 public:
-    // Called every frame
     virtual void Tick(float DeltaTime) override;
 
-    // Called to bind functionality to input
     virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
     private:
     void MoveForward(float Amount);
     void MoveRight(float Amount);
-
 };
