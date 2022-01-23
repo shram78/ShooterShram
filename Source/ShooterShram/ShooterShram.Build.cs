@@ -12,7 +12,7 @@ public class ShooterShram : ModuleRules
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
 
-		PublicIncludePaths.AddRange(new string[] { "ShooterShram/Public/Player" });
+		PublicIncludePaths.AddRange(new string[] { "ShooterShram/Public/Player", "ShooterShram/Public/Player/Components" });
 
 		// Uncomment if you are using Slate UI
 		// PrivateDependencyModuleNames.AddRange(new string[] { "Slate", "SlateCore" });

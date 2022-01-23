@@ -15,7 +15,7 @@ class SHOOTERSHRAM_API ASSBaseCharacter : public ACharacter
     GENERATED_BODY()
 
 public:
-    ASSBaseCharacter();
+    ASSBaseCharacter(const FObjectInitializer& ObjInit);
 
 protected:
     UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Component");
@@ -31,7 +31,16 @@ public:
 
     virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-    private:
+    UFUNCTION(BlueprintCallable, Category = "Movement")
+    bool IsRunning() const;
+
+private:
+    bool WantsToRun = false;
+    bool IsMovingForward = false;
+
     void MoveForward(float Amount);
     void MoveRight(float Amount);
+
+    void OnStartRunning();
+    void OnStopRunning();
 };
